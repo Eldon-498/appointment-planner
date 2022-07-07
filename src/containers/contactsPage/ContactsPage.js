@@ -55,7 +55,7 @@ export const ContactsPage = (props) => {
         email={email}
         setEmail={setEmail}
         phone={phone}
-        setNumber={setPhone}
+        setPhone={setPhone}
         handleSubmit={handleSubmit}
         alert={alert}
 
