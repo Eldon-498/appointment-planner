@@ -7,7 +7,7 @@ export const ContactsPage = (props) => {
   contact info and duplicate check
   */
   const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
+  const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [duplicate, setDuplicate] = useState(false);
   const [alert, setAlert] = useState('');
@@ -16,9 +16,9 @@ export const ContactsPage = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
       if(!duplicate){
-        props.addContact(name, number, email);
+        props.addContact(name, phone, email);
         setName('');
-        setNumber('');
+        setPhone('');
         setEmail('');
       }
   };
@@ -42,7 +42,7 @@ export const ContactsPage = (props) => {
         setAlert('');
       }
     }
-  }, [props.contact, name, duplicate]);
+  }, [props.contacts, name, duplicate]);
 
 
 
@@ -50,10 +50,21 @@ export const ContactsPage = (props) => {
     <div>
       <section>
         <h2>Add Contact</h2> 
+        <ContactForm name={name}
+        setName={setName}
+        email={email}
+        setEmail={setEmail}
+        phone={phone}
+        setNumber={setPhone}
+        handleSubmit={handleSubmit}
+        alert={alert}
+
+         />
       </section>
       <hr />
       <section>
         <h2>Contacts</h2>
+        <TileList object={props.contacts} />
       </section>
     </div>
   );
