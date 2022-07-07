@@ -9,10 +9,9 @@ function App() {
   Define state variables for 
   contacts and appointments 
   */
-  const [name, setName]  = useState([]);
-  const [phoneNumber, setPhoneNumber] = useState([]);
+
   const [contacts, setContact] = useState([]);
-  const [appointments, seAppointments] =useState([]);
+  const [appointments, setAppointments] =useState([]);
 
   
 
@@ -25,16 +24,20 @@ function App() {
   Implement functions to add data to
   contacts and appointments
   */
-  const addContact = ({ target }) =>
+  const addContact = (name, phone, email) =>
 {
   setContact(newContact =>{
    
-    return [newContact, ...target.value];
+    return [...newContact, {name: name, phone: phone, email: email}];
   });
 }
 
-const addAppointment = () =>{
+const addAppointment = (title, contact, date, time) =>{
+   setAppointments(newAppointment =>{
+    return [{title: title, contact: contact, date: date, time: time}]
+   }) ;
 
+   
 }
 
   return (
