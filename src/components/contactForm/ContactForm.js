@@ -20,7 +20,7 @@ export const ContactForm = ({
       value={phone} 
       onChange={(e)=>setPhone(e.target.value)} 
       type="tel" id="phoneInput"
-      pattern="/^(\+254|0)[1-9]\d{8}$/" required />
+      pattern="^0(7(?:(?:[129][0-9])|(?:0[0-8])|(4[0-1]))[0-9]{6})$" required />
       <label htmlFor="emailInput">Email</label>
       <input 
       value={email}
@@ -29,7 +29,7 @@ export const ContactForm = ({
       required
       id="emailInput"
        />
-       <button type="submit" disabled={alert ? true : false }>Add Contact</button>
+       <input type="submit" value="Add Contact" />
        <h2 className="alert">{alert}</h2>
     </form>
   );

@@ -57,11 +57,11 @@ const addAppointment = (title, contact, date, time) =>{
           </Route>
           <Route path={ROUTES.CONTACTS}>
              {/* Add props to ContactsPage */}
-            <ContactsPage contacts={contacts}/>
+            <ContactsPage contacts={contacts} addContact={addContact}/>
           </Route>
           <Route path={ROUTES.APPOINTMENTS}>
             {/* Add props to AppointmentsPage */}
-            <AppointmentsPage appointments={appointments} />
+            <AppointmentsPage appointments={appointments} addAppointment={addAppointment} contacts={contacts} />
           </Route>
         </Switch>
       </main>

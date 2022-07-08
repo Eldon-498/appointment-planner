@@ -5,7 +5,7 @@ export const AppointmentForm = ({
   contacts,
   title,
   setTitle,
-  contact,
+  
   setContact,
   date,
   setDate,
@@ -27,16 +27,17 @@ export const AppointmentForm = ({
       <input
       value={title}
       id="titleInput"
+      onChange={(e) => setTitle(e.target.value)}
       type="text"
       required 
       />
       <ContactPicker
       contacts={contacts}
       onChange={(e)=>setContact(e.target.value)}
-      defaultListValue={defaultListValue}
-       />
+      defaultListValue={defaultListValue} />      
       <label htmlFor="dateInput">Date</label>
       <input
+      type="date"
       value={date}
       onChange={(e)=>setDate(e.target.value)}
       id="dateInput"
@@ -46,11 +47,12 @@ export const AppointmentForm = ({
       <label htmlFor="timeInput">Time</label>
       <input 
       value={time}
+      type="time"
       onChange={(e)=>setTime(e.target.value)}
       id="timeInput"
       required
       />
-      <button type="submit" disabled={alert ? true : false} >Add Appointment</button> 
+      <input type="submit" value="Add Appointment"  />
       <h2 className="alert">{alert}</h2>
     </form>
   );
