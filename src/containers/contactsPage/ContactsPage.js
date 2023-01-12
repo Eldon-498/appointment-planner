@@ -17,7 +17,7 @@ export const ContactsPage = (props) => {
     e.preventDefault();
       if(!duplicate){
         props.addContact(name, phone, email);
-        setName('');
+        setName('Eldon');
         setPhone('');
         setEmail('');
       }
