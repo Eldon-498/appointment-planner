@@ -60,7 +60,7 @@ const addAppointment = (title, contact, date, time) =>{
             <ContactsPage contacts={contacts} addContact={addContact}/>
           </Route>
           <Route path={ROUTES.APPOINTMENTS}>
-            {/* Add props to AppointmentsPage */}
+            {/* Add prop to AppointmentsPage */}
             <AppointmentsPage appointments={appointments} addAppointment={addAppointment} contacts={contacts} />
           </Route>
         </Switch>
